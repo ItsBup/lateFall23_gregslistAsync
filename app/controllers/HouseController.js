@@ -1,5 +1,6 @@
-import { AppState } from "../AppState";
-import { setHTML } from "../utils/Writer";
+import { AppState } from "../AppState.js";
+import { setHTML } from "../utils/Writer.js";
+import { houseService } from "../services/HouseService.js";
 
 function _drawHouse(){
   const houses = AppState.houses
@@ -11,6 +12,6 @@ function _drawHouse(){
 export class HouseController{
   constructor(){
     console.log('🏚️🎮');
-    _drawHouse()
+    AppState.on('houses', _drawHouse)
   }
 }

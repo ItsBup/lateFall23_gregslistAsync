@@ -20,7 +20,7 @@ export class House{
       <div class="card">
       <img src="${this.imgUrl}" class="img-fluid"/>
       <h4 class="text-center mt-1"> Bedrooms: ${this.bedrooms} - Bathrooms: ${this.bathrooms} - Levels: ${this.levels} - Year: ${this.year}</h4>
-      <p class="text-success me-2 fw-bold">$${this.description}</p>
+      <p class="text-success me-2 fw-bold">${this.description}</p>
       <p class="text-end text-success me-2 fw-bold">$${this.price}</p>
       <p>listed by <i>${this.creator.name}</i></p>
       ${this.RemoveHouseButton} 
