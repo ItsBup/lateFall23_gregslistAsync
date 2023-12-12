@@ -9,6 +9,7 @@ class ObservableAppState extends EventEmitter {
   user = null
   /**@type {import('./models/Account.js').Account | null} */
   account = null
+
   /** @type {House[]} */
   houses = [
     new House(
@@ -33,6 +34,8 @@ class ObservableAppState extends EventEmitter {
         },
         "id":"645d60f381faf24223ae886b"
       },
+    ),
+    new House(
       {
         "_id":"64640a81afbe13b729b6517f",
         "bedrooms":6,
@@ -52,9 +55,10 @@ class ObservableAppState extends EventEmitter {
           "id":"6463f697af735760607741be"
         },
         "id":"64640a81afbe13b729b6517f"
-    }
+      }
     )
   ]
+  
   /** @type {Car[]} */
   cars = [
     new Car(
