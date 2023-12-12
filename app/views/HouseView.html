@@ -17,12 +17,20 @@
       <input class="form-control" required name="levels" type="number" min="0" max="100000" value="42069">
     </div>
     <div class="mb-3 col-4">
+      <label for="house-year">Year</label>
+      <input class="form-control" required name="year" type="number" min="1900" max="2024" value="2023">
+    </div>
+    <div class="mb-3 col-4">
       <label for="house-price">Price [1-10000]</label>
       <input class="form-range" name="price" type="range" min="1" max="10000" step="10" value="69">
     </div>
     <div class="mb-3 col-8">
       <label for="house-image">Picture of House</label>
       <input class="form-control" required name="imgUrl" type="url" maxlength="500" placeholder="https://...">
+    </div>
+    <div class="mb-2 col-12">
+      <label for="house-description">Description</label>
+      <textarea name="description" id="house-description" rows="5" class="w-100 form-control"></textarea>
     </div>
     <div class="mb-2 col-12 text-end">
       <button type="submit" class="btn btn-primary"><i class="mdi mdi-plus"></i>Submit</button>

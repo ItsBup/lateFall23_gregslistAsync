@@ -19,12 +19,17 @@ class HouseService{
   }
 
   async getHouses(){
-    const response = await fetch('https://bcw-sandbox.herokuapp.com/api/houses', {})
+    const response = await fetch('https://sandbox.codeworksacademy.com/api/houses', {})
     const body = await response.json()
     const newHouses = body.map(houseData => new House(houseData))
     AppState.houses = newHouses
   }
 
+  async updateHouse(formData){
+    const response = await api.post('api/houses', formData) 
+    const newHouse = new House(response.data) 
+    AppState.houses.push(newHouse)
+  }
 }
 
 export const houseService = new HouseService()

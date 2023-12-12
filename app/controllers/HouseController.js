@@ -24,19 +24,51 @@ export class HouseController{
     AppState.on('user', _showCreateHouseForm)
     AppState.on('account', _drawHouse)
     _showCreateHouseForm()
+    this.getHouses()
   }
 
   async createHouse(){
-    event.preventDefault()
-    const form = event.target
-    const formData = getFormData(form)
-    houseService.createHouse(formData)
-    form.reset()
+    try {
+      event.preventDefault()
+      const form = event.target
+      const formData = getFormData(form)
+      await houseService.createHouse(formData)
+      form.reset()
+    } catch (error) {
+      console.error(error)
+      Pop.toast(error.message)
+    }
+    
   }
-  async removeHOuse(houseId){
-    houseService.removeHouse(houseId)
+  async removeHouse(houseId){
+    try {
+      await houseService.removeHouse(houseId)
+      Pop.toast('Your House Has Been Purged', 'success')
+    } catch (error) {
+      console.error(error)
+      Pop.toast(error.message)
+    }
+    
   }
   async getHouses(){
-    houseService.getHouses()
+    try {
+      await houseService.getHouses()
+    } catch (error) {
+      console.error(error)
+      Pop.toast(error.message)
+    }
+  }
+  async updateHouse(){
+    try {
+      event.preventDefault()
+      const form = event.target
+      const formData = getFormData(form)
+      await houseService.updateHouse(formData)
+      form.reset()
+    } catch (error) {
+      console.error(error)
+      Pop.toast(error.message)
+    }
+    
   }
 }
