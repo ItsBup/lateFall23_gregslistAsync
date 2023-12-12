@@ -1,0 +1,36 @@
+<section class="container-fluid">
+  <h2 class="text-center">House Page</h2>
+  <form onsubmit="app.HouseController.createHouse()" id="create-house-form" class="d-none row justify-content-center bg-white mb-4">
+    <div class="col-10 text-center fw-bold">
+      List your home today!
+    </div>
+    <div class="mb-3 col-4">
+      <label for="house-bedrooms">Bedrooms</label>
+      <input class="form-control" required name="bedrooms" type="number" min="0" max="100" value="2">
+    </div>
+    <div class="mb-3 col-4">
+      <label for="house-bathrooms">Bathrooms</label>
+      <input class="form-control" required name="bathrooms" type="number" min="0" max="100" value="2">
+    </div>
+    <div class="mb-3 col-4">
+      <label for="house-level">Levels</label>
+      <input class="form-control" required name="levels" type="number" min="0" max="100000" value="42069">
+    </div>
+    <div class="mb-3 col-4">
+      <label for="house-price">Price [1-10000]</label>
+      <input class="form-range" name="price" type="range" min="1" max="10000" step="10" value="69">
+    </div>
+    <div class="mb-3 col-8">
+      <label for="house-image">Picture of House</label>
+      <input class="form-control" required name="imgUrl" type="url" maxlength="500" placeholder="https://...">
+    </div>
+    <div class="mb-2 col-12 text-end">
+      <button type="submit" class="btn btn-primary"><i class="mdi mdi-plus"></i>Submit</button>
+    </div>
+    </form>
+
+  <!-- SECTION for list of cars -->
+  <section class="row" id="houses-list">
+
+  </section>
+</section>

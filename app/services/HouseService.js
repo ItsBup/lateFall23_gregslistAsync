@@ -1,18 +1,14 @@
 import { AppState } from "../AppState.js";
-import { Car } from "../models/Car.js";
-import { api } from "./AxiosService.js"; // this is a instance of axios we can use to make requests
-// the api needs to have a baseURL set in the env.js file to work
-// api includes methods for GET, POST, PUT, DELETE
-// GET(read), POST(create), PUT(update), DELETE(delete)
+import { House } from "../models/House.js";
+import { api } from "./AxiosService.js";
 
 
 
-
-class CarsService{
-  async removeCar(carId) {
-    const response = await api.delete(`api/cars/${carId}`)
-    console.log('🚗👋📡', response); //🧪
-    const indexToRemove = AppState.cars.findIndex(car => car.id == carId)
+class HouseService{
+  async removeHouse(houseId) {
+    const response = await api.delete(`api/houses/${houseId}`)
+    console.log('hmmm', response);
+    const indexToRemove = AppState.houses.findIndex(car => car.id == carId)
     AppState.cars.splice(indexToRemove, 1) // 🧪 tested that car was removed, and also tested the Pop notification
   }
 
@@ -37,4 +33,4 @@ class CarsService{
 
 }
 
-export const carsService = new CarsService()
+export const houseService = new HouseService()
